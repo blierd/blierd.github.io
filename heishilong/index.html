@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑蚀龙-怪物猎人世界MHW全图鉴资料与攻略站</title>
+    <meta name="description" content="黑蚀龙MHW全图鉴资料站，提供黑蚀龙技能弱点部位、肉质表、装备推荐、配装方案及狩猎视频攻略。了解黑蚀龙生态与战斗机制，助你轻松狩猎。">
+    <meta name="keywords" content="黑蚀龙, 怪物猎人世界, MHW, 怪物图鉴, 怪物弱点, 配装">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-bg: #0f1115;
+            --card-bg: #1a1d24;
+            --accent-color: #ff9d00;
+            --text-main: #e0e0e0;
+            --text-muted: #8b9bb4;
+            --border-color: #2e323e;
+            --highlight: #00d2ff;
+            --danger: #ff4d4d;
+            --font-stack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 17, 21, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 80px 0 60px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 50%, rgba(0, 210, 255, 0.15) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            background: rgba(255, 157, 0, 0.1);
+            color: var(--accent-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background: #ffb733;
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 400px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .hero-visual:hover img {
+            opacity: 0.6;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: -30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Content Layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            padding: 60px 0;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            color: var(--accent-color);
+        }
+
+        /* Weakness Table */
+        .weakness-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .weakness-table th, .weakness-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .weakness-table th {
+            background: rgba(255, 255, 255, 0.05);
+            font-weight: 600;
+            color: var(--text-muted);
+            width: 30%;
+        }
+
+        .damage-type {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot-s {
+            background: #ff4d4d;
+        }
+        .dot-a {
+            background: #ff9d00;
+        }
+        .dot-b {
+            background: #00d2ff;
+        }
+        .dot-c {
+            background: #00ff88;
+        }
+        .dot-none {
+            background: #555;
+        }
+
+        /* Equipment Grid */
+        .equip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .equip-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .equip-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .equip-img {
+            height: 180px;
+            background: #2a2e3b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 3rem;
+        }
+
+        .equip-info {
+            padding: 15px;
+        }
+
+        .equip-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .equip-type {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .equip-stats {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-box {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .info-list li::before {
+            content: '•';
+            color: var(--accent-color);
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.2s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0c0f;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+
+            .hero-tags {
+                justify-content: center;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                MHW<span>Guide</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">怪物图鉴</a></li>
+                    <li><a href="#">武器装备</a></li>
+                    <li><a href="#">配装模拟</a></li>
+                    <li><a href="#">社区攻略</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <div class="hero-tags">
+                        <span class="tag">天彗龙</span>
+                        <span class="tag">龙属性</span>
+                        <span class="tag">高难度</span>
+                    </div>
+                    <h1>黑蚀龙</h1>
+                    <p>黑蚀龙，又称天彗龙。一种在天空与大地间穿梭自如的神秘古龙。其鳞片能够反射光线，身体周围环绕着强烈的龙气，是《怪物猎人世界》中极具挑战性的中盘Boss。</p>
+                    <div>
+                        <button class="btn btn-primary" onclick="document.getElementById('weakness').scrollIntoView({behavior: 'smooth'})">查看弱点与肉质</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="https://picsum.photos/seed/neruga/600/400.jpg" alt="黑蚀龙示意图">
+                </div>
+            </div>
+            
+            <div class="container stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">2,965</div>
+                    <div class="stat-label">HP (弱点判定)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">龙</div>
+                    <div class="stat-label">主要属性</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">8分15秒</div>
+                    <div class="stat-label">推荐狩猎时间</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">★</div>
+                    <div class="stat-label">推荐武器</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="container content-grid">
+            <div class="main-column">
+                
+                <!-- Weakness Section -->
+                <section id="weakness">
+                    <div class="section-title">
+                        <span>弱点与肉质</span>
+                        <a href="#" style="font-size: 0.9rem; color: var(--accent-color);">查看完整表 &rarr;</a>
+                    </div>
+                    <table class="weakness-table">
+                        <thead>
+                            <tr>
+                                <th>部位</th>
+                                <th>斩击</th>
+                                <th>打击</th>
+                                <th>射击</th>
+                                <th>火</th>
+                                <th>水</th>
+                                <th>雷</th>
+                                <th>冰</th>
+                                <th>龙</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>头部</td>
+                                <td><span class="dot dot-s"></span></td>
+                                <td><span class="dot dot-a"></span></td>
+                                <td><span class="dot dot-s"></span></td>
+                                <td><span class="dot dot-none"></span></td>
+                                <td><span class="dot dot-a"></span></td>
+                                <td><span class="dot dot-c"></span></td>
+                                <td><span class="dot dot-a"></span></td>
+                                <td><span class="dot dot-s"></span></td>
+                            </tr>
+                            <tr>
+                                <td>前脚</td>
+                                <td><span class="dot dot-a"></span></td>
+                                <td><span class="dot dot-s"></span></td>
+                                <td><span class="dot dot-a"></span></td>
+                                <td><span class="dot dot-c"></span></td>
+                                <td><span class="dot dot-b"></span></td>
+                                <td><span class="dot dot-c"></span></td>
+                                <td><span class="dot dot-b"></span></td>
+                                <td><span class="dot dot-a"></span></td>
+                            </tr>
+                            <tr>
+                                <td>尾部</td>
+                                <td><span class="dot dot-s"></span></td>
+                                <td><span class="dot dot-a"></span></td>
+                                <td><span class="dot dot-s"></span></td>
+                                <td><span class="dot dot-none"></span></td>
+                                <td><span class="dot dot-b"></span></td>
+                                <td><span class="dot dot-c"></span></td>
+                                <td><span class="dot dot-b"></span></td>
+                                <td><span class="dot dot-s"></span></td>
+                            </tr>
+                            <tr>
+                                <td>翅膀</td>
+                                <td><span class="dot dot-b"></span></td>
+                                <td><span class="dot dot-b"></span></td>
+                                <td><span class="dot dot-a"></span></td>
+                                <td><span class="dot dot-c"></span></td>
+                                <td><span class="dot dot-b"></span></td>
+                                <td><span class="dot dot-c"></span></td>
+                                <td><span class="dot dot-b"></span></td>
+                                <td><span class="dot dot-a"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-muted);">* 标记说明：S=极强，A=很强，B=良好，C=一般，-=无效</p>
+                </section>
+
+                <!-- Recommended Equipment -->
+                <section>
+                    <div class="section-title">
+                        <span>推荐装备</span>
+                    </div>
+                    <div class="equip-grid">
+                        <article class="equip-card">
+                            <div class="equip-img">⚔️</div>
+                            <div class="equip-info">
+                                <h3 class="equip-name">天彗龙重剑</h3>
+                                <span class="equip-type">武器</span>
+                                <p class="equip-stats">龙属性攻击力 640<br>会心 +15%<br>特殊攻击强化</p>
+                            </div>
+                        </article>
+                        <article class="equip-card">
+                            <div class="equip-img">🛡️</div>
+                            <div class="equip-info">
+                                <h3 class="equip-name">天彗龙头盔</h3>
+                                <span class="equip-type">防具</span>
+                                <p class="equip-stats">龙属性攻击+2<br>耐力消耗减少<br>火耐性+5</p>
+                            </div>
+                        </article>
+                        <article class="equip-card">
+                            <div class="equip-img">🦾</div>
+                            <div class="equip-info">
+                                <h3 class="equip-name">天彗龙臂甲</h3>
+                                <span class="equip-type">防具</span>
+                                <p class="equip-stats">攻击力+2<br>装填数UP<br>耐力+2</p>
+                            </div>
+                        </article>
+                        <article class="equip-card">
+                            <div class="equip-img">👢</div>
+                            <div class="equip-info">
+                                <h3 class="equip-name">天彗龙腿甲</h3>
+                                <span class="equip-type">防具</span>
+                                <p class="equip-stats">龙属性攻击+2<br>回避距离UP<br>水耐性+5</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Hunting Tips -->
+                <section>
+                    <div class="section-title">
+                        <span>狩猎指南</span>
+                    </div>
+                    <div style="background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color);">
+                        <h3 style="margin-bottom: 15px; color: var(--text-main);">1. 空中连招应对</h3>
+                        <p style="margin-bottom: 15px; color: var(--text-muted);">黑蚀龙在空中时会使用三连击的龙卷风攻击。建议使用<strong>水属性武器</strong>或携带<strong>落石</strong>道具。在它落地前使用爆破弹药可以有效打断其连招。</p>
+                        
+                        <h3 style="margin-bottom: 15px; color: var(--text-main);">2. 龙属性弱点</h3>
+                        <p style="margin-bottom: 15px; color: var(--text-muted);">由于黑蚀龙对龙属性有极好的抗性，使用火属性或水属性的武器会取得更好的伤害输出。务必准备足够的回复药和强走药。</p>
+
+                        <h3 style="margin-bottom: 15px; color: var(--text-main);">3. 斩击斧/大剑玩家</h3>
+                        <p style="margin-bottom: 0; color: var(--text-muted);">大剑玩家应重点关注其前脚，利用弱点判定进行蓄力斩。斩击斧玩家建议使用变形斩进行输出，并在红色能量槽满时释放超解。</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside>
+                <!-- Ecology -->
+                <div class="info-box">
+                    <h3>生态情报</h3>
+                    <ul class="info-list">
+                        <li><strong>栖息地：</strong>古代树森林、陆珊瑚台地</li>
+                        <li><strong>移动方式：</strong>飞行、滑翔、龙卷风</li>
+                        <li><strong>饮食：</strong>捕食小型飞龙种</li>
+                        <li><strong>特殊能力：</strong>制造龙卷风、反射光线</li>
+                    </ul>
+                </div>
+
+                <!-- FAQ -->
+                <div class="info-box">
+                    <h3>常见问题 (FAQ)</h3>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">黑蚀龙会掉落什么素材？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            掉落物包括黑蚀龙的上鳞、黑蚀龙的尖角、天彗龙的爪、黑蚀龙的翼膜以及稀有素材天彗龙的重壳。
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">黑蚀龙和天彗龙是同一种怪物吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            是的，黑蚀龙（天彗龙）是《怪物猎人世界》中的主要怪物。其学名即“天彗龙”，因全身覆盖黑色鳞片且能反射光线而得名。
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">如何快速破头？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            使用水属性武器或大剑/斩击斧等高伤害武器，集中攻击其头部。使用“落石”道具打断其空中动作可以增加破头的几率。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Monsters -->
+                <div class="info-box">
+                    <h3>相关怪物</h3>
+                    <ul class="info-list">
+                        <li><a href="#">苍蓝星</a></li>
+                        <li><a href="#">炎王龙</a></li>
+                        <li><a href="#">灭尽龙</a></li>
+                        <li><a href="#">冥灯龙</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 MHWGuide. 本站为玩家攻略整理站，怪物猎人系列版权归Capcom所有。</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            // Close other items
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(item => {
+                if (item !== element) {
+                    item.classList.remove('active');
+                }
+            });
+            // Toggle current
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+  </html>
