@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="魔课方 - 专业编程教育平台，提供Python、Java、大数据等全栈开发课程，助力零基础学员快速掌握编程技能，实现职业转型与技能提升。">
+    <meta name="keywords" content="魔课方,编程培训,Python教程,Java开发,大数据学习,在线教育,IT培训">
+    <title>魔课方 - 全栈编程技能提升与在线教育平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #10b981;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f3f4f6;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #111827;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 30px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Course Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .course-img {
+            height: 160px;
+            background-color: #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .course-level {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .course-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-cat {
+            font-size: 12px;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .course-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .course-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .course-students {
+            font-size: 12px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .course-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ef4444;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+        }
+
+        .feature-item h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Curriculum Section */
+        .curriculum-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .curriculum-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .curriculum-header {
+            background-color: #f9fafb;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .curriculum-header h4 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .curriculum-body {
+            padding: 20px 24px;
+            display: none;
+            border-top: 1px solid var(--border-color);
+            background-color: white;
+        }
+
+        .curriculum-item.active .curriculum-body {
+            display: block;
+        }
+
+        .curriculum-item.active .curriculum-header {
+            background-color: #eff6ff;
+            color: var(--primary-color);
+        }
+
+        .chapter-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .chapter-list li:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-list span.duration {
+            color: var(--text-light);
+            font-size: 12px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-section .btn {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 12px 32px;
+            font-size: 16px;
+        }
+
+        .cta-section .btn:hover {
+            background-color: #f3f4f6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: #d1d5db;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 10px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span>魔课方</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#courses">热门课程</a></li>
+                    <li><a href="#features">学习优势</a></li>
+                    <li><a href="#curriculum">课程大纲</a></li>
+                    <li><a href="#community">学员社区</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">免费试听</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-tags">
+                    <span class="tag">Python全栈开发</span>
+                    <span class="tag">大数据分析</span>
+                    <span class="tag">Java企业级开发</span>
+                    <span class="tag">人工智能入门</span>
+                </div>
+                <h1>打破技术壁垒，<br>从零开始掌握编程核心技能</h1>
+                <p>魔课方专注于为初学者和转行人员提供高质量的IT编程教育。通过实战项目驱动学习，让每一位学员都能快速成长为具备就业竞争力的工程师。</p>
+                <div style="display: flex; justify-content: center; gap: 16px;">
+                    <a href="#courses" class="btn btn-primary" style="padding: 12px 36px; font-size: 16px;">浏览课程体系</a>
+                    <a href="#curriculum" class="btn btn-outline" style="padding: 12px 36px; font-size: 16px;">查看课程大纲</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-bar">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>50,000+</h3>
+                        <p>累计学员</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>200+</h3>
+                        <p>实战项目</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>就业率</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>技术支持</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>热门编程课程</h2>
+                        <p>精选行业主流技术栈，紧跟市场需求变化</p>
+                    </div>
+                    <a href="#" class="btn btn-outline">查看全部课程 &rarr;</a>
+                </div>
+                <div class="course-grid">
+                    <!-- Course Card 1 -->
+                    <article class="course-card">
+                        <div class="course-img">
+                            <img src="https://picsum.photos/seed/code1/400/250" alt="Python零基础到精通">
+                            <span class="course-level">入门</span>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-cat">Python</div>
+                            <h3 class="course-title">Python零基础到全栈开发实战</h3>
+                            <p class="course-desc">从语法基础到Django/Flask框架，通过电商后台、爬虫实战等12个项目，系统掌握Python核心技能。</p>
+                            <div class="course-footer">
+                                <div class="course-students">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                    12,500人正在学
+                                </div>
+                                <div class="course-price">¥299</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Course Card 2 -->
+                    <article class="course-card">
+                        <div class="course-img">
+                            <img src="https://picsum.photos/seed/code2/400/250" alt="Java高薪就业班">
+                            <span class="course-level">进阶</span>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-cat">Java</div>
+                            <h3 class="course-title">Java后端架构师就业班</h3>
+                            <p class="course-desc">深度解析Spring Boot、微服务架构、Redis缓存及高并发处理，对标大厂面试标准，直通互联网大厂。</p>
+                            <div class="course-footer">
+                                <div class="course-students">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                    8,300人正在学
+                                </div>
+                                <div class="course-price">¥599</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Course Card 3 -->
+                    <article class="course-card">
+                        <div class="course-img">
+                            <img src="https://picsum.photos/seed/code3/400/250" alt="大数据分析">
+                            <span class="course-level">高级</span>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-cat">大数据</div>
+                            <h3 class="course-title">Hadoop与Spark大数据开发</h3>
+                            <p class="course-desc">掌握HDFS、MapReduce、Hive及Spark核心组件，处理海量数据，成为大数据领域急需的工程师。</p>
+                            <div class="course-footer">
+                                <div class="course-students">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                    5,200人正在学
+                                </div>
+                                <div class="course-price">¥499</div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section features">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>魔课方教学特色</h2>
+                        <p>不同于传统灌输式教学，我们采用项目实战与导师答疑相结合的模式</p>
+                    </div>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </div>
+                        <h3>项目驱动学习</h3>
+                        <p>拒绝纸上谈兵，每节课都配套企业级实战案例，在解决问题中掌握技术。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        </div>
+                        <h3>1对1导师答疑</h3>
+                        <p>专业助教团队7x12小时在线服务，代码提交即可获得人工点评与修改建议。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <h3>终身学习社区</h3>
+                        <p>加入魔课方技术交流群，与数千名同行者共同进步，获取最新行业资讯。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Section -->
+        <section id="curriculum" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>课程大纲预览</h2>
+                        <p>点击展开查看具体学习内容与课时安排</p>
+                    </div>
+                </div>
+                <div class="curriculum-list">
+                    <div class="curriculum-item active">
+                        <div class="curriculum-header">
+                            <h4>阶段一：编程基础与Python进阶</h4>
+                            <span>展开 ▼</span>
+                        </div>
+                        <div class="curriculum-body">
+                            <ul class="chapter-list">
+                                <li><span>1. Python环境搭建与变量数据类型</span> <span class="duration">2课时</span></li>
+                                <li><span>2. 流程控制语句（if/else/for/while）</span> <span class="duration">4课时</span></li>
+                                <li><span>3. 函数定义、作用域与装饰器</span> <span class="duration">5课时</span></li>
+                                <li><span>4. 面向对象编程（OOP）详解</span> <span class="duration">6课时</span></li>
+                                <li><span>5. 文件操作与异常处理机制</span> <span class="duration">3课时</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <div class="curriculum-header">
+                            <h4>阶段二：Web框架开发实战</h4>
+                            <span>展开 ▼</span>
+                        </div>
+                        <div class="curriculum-body">
+                            <ul class="chapter-list">
+                                <li><span>1. Django框架核心组件解析</span> <span class="duration">8课时</span></li>
+                                <li><span>2. ORM数据库模型设计与迁移</span> <span class="duration">6课时</span></li>
+                                <li><span>3. RESTful API接口开发规范</span> <span class="duration">7课时</span></li>
+                                <li><span>4. Vue.js 前后端分离实战项目</span> <span class="duration">10课时</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="curriculum-item">
+                        <div class="curriculum-header">
+                            <h4>阶段三：爬虫与数据分析</h4>
+                            <span>展开 ▼</span>
+                        </div>
+                        <div class="curriculum-body">
+                            <ul class="chapter-list">
+                                <li><span>1. Requests与BeautifulSoup网页解析</span> <span class="duration">4课时</span></li>
+                                <li><span>2. Selenium自动化测试与数据采集</span> <span class="duration">6课时</span></li>
+                                <li><span>3. Pandas数据清洗与可视化</span> <span class="duration">8课时</span></li>
+                                <li><span>4. 真实商业数据案例实战</span> <span class="duration">5课时</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>准备好开始你的编程之旅了吗？</h2>
+                <p>前100名报名学员赠送《Python面试真题解析》电子书</p>
+                <a href="#" class="btn">立即领取试听名额</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>魔课方</h3>
+                    <p style="opacity: 0.7; font-size: 14px; line-height: 1.8;">
+                        专注于为互联网从业者及转行人员提供高质量的编程技能培训。我们致力于通过实战项目教学，帮助学员快速掌握核心技能，顺利实现职业转型。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">品牌故事</a></li>
+                        <li><a href="#">师资团队</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">合作机构</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>课程中心</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Python开发</a></li>
+                        <li><a href="#">Java架构</a></li>
+                        <li><a href="#">大数据</a></li>
+                        <li><a href="#">人工智能</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助支持</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">学习计划</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 魔课方教育科技有限公司 版权所有 | 京ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的交互逻辑：折叠菜单
+        document.querySelectorAll('.curriculum-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                // 关闭其他
+                document.querySelectorAll('.curriculum-item').forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+                // 切换当前
+                item.classList.toggle('active');
+                
+                // 更新箭头
+                const span = header.querySelector('span');
+                span.textContent = item.classList.contains('active') ? '收起 ▲' : '展开 ▼';
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+                                                                     </html>
