@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProcessOn下载 - 专业在线流程图绘制工具与客户端安装指南</title>
+    <meta name="description" content="ProcessOn下载页面，提供ProcessOn官方在线版及桌面客户端下载说明。涵盖免费与专业版功能对比、安装教程、跨平台支持及常见安装问题解答。">
+    <meta name="keywords" content="ProcessOn下载,流程图软件,在线绘图工具,ProcessOn客户端,ProcessOn安装">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --primary-hover: #0052a3;
+            --secondary-color: #f0f4f8;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #e1e4e8;
+            --success-color: #28a745;
+            --warning-bg: #fff8e1;
+            --warning-text: #856404;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #f9fafb;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-download-nav {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+        }
+
+        .btn-download-nav:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eef2f3 0%, #dfe9f3 100%);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: #f0f8ff;
+        }
+
+        /* Feature Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: #e6f0fa;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Download Section */
+        .download-section {
+            background: white;
+        }
+
+        .download-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .download-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .download-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .download-card {
+            background: var(--secondary-color);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .os-icons {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .os-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .os-item:hover .os-icon {
+            transform: scale(1.1);
+        }
+
+        .os-icon {
+            width: 64px;
+            height: 64px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s;
+        }
+
+        .os-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .os-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .download-link {
+            display: inline-block;
+            background-color: var(--success-color);
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.25);
+        }
+
+        .download-link:hover {
+            background-color: #218838;
+            text-decoration: none;
+        }
+
+        /* Installation Guide */
+        .guide-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .step-item::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .step-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .step-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: white;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            padding: 1.5rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding-bottom: 1.5rem;
+            color: var(--text-light);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .os-icons {
+                gap: 1rem;
+            }
+
+            .os-icon {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3H21V21H3V3Z" stroke="#0066cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3 9H21" stroke="#0066cc" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 21V9" stroke="#0066cc" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                ProcessOn<span>下载指南</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features">功能特点</a></li>
+                    <li><a href="#download">客户端下载</a></li>
+                    <li><a href="#guide">安装教程</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#download" class="btn btn-download-nav">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>ProcessOn 下载 - 专业流程图与思维导图工具</h1>
+                <p>支持在线与离线使用，跨平台兼容 Windows、Mac 与 Linux。免费注册即可开始绘制，无需安装即可体验核心功能。</p>
+                <div class="cta-group">
+                    <a href="#download" class="btn btn-primary">下载客户端</a>
+                    <a href="https://www.processon.com/" target="_blank" class="btn btn-outline">访问在线版</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择 ProcessOn 客户端？</h2>
+                    <p>除了在线浏览器使用，官方客户端提供了更流畅的绘图体验和本地文件管理能力。</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon-box">⚡</div>
+                        <h3>离线绘图</h3>
+                        <p>安装客户端后，即使断网也能继续编辑流程图，支持本地保存与导出，数据更安全。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box">🚀</div>
+                        <h3>高性能渲染</h3>
+                        <p>针对复杂流程图和大量节点进行渲染优化，缩放流畅，拖拽丝滑，提升工作效率。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box">🔄</div>
+                        <h3>自动同步</h3>
+                        <p>云端账户自动同步您的所有设计，在电脑、平板和手机之间无缝切换工作。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-box">📦</div>
+                        <h3>海量模板</h3>
+                        <p>内置流程图、思维导图、UML、组织结构图等多种模板库，开箱即用，快速上手。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="section download-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>ProcessOn 客户端下载</h2>
+                    <p>请根据您的操作系统选择对应的安装包进行下载</p>
+                </div>
+
+                <div class="download-tabs">
+                    <button class="tab-btn active" onclick="switchTab('windows')">Windows</button>
+                    <button class="tab-btn" onclick="switchTab('mac')">macOS</button>
+                    <button class="tab-btn" onclick="switchTab('linux')">Linux</button>
+                </div>
+
+                <!-- Windows Download -->
+                <div id="windows" class="download-content active">
+                    <div class="download-card">
+                        <div class="os-icons">
+                            <div class="os-item">
+                                <div class="os-icon">🪟</div>
+                                <span class="os-name">Windows 10/11</span>
+                                <span class="os-desc">64位专业版</span>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 1.5rem; color: var(--text-light);">
+                            适用于 Windows 7 及以上版本的电脑系统，支持一键安装。
+                        </p>
+                        <a href="https://www.processon.com/download" target="_blank" class="download-link">下载 ProcessOn Windows 客户端</a>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
+                            文件大小: ~150MB | 下载后双击运行安装程序
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mac Download -->
+                <div id="mac" class="download-content">
+                    <div class="download-card">
+                        <div class="os-icons">
+                            <div class="os-item">
+                                <div class="os-icon">🍎</div>
+                                <span class="os-name">macOS</span>
+                                <span class="os-desc">Intel / Apple Silicon</span>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 1.5rem; color: var(--text-light);">
+                            完美适配 macOS 系统，支持 M1、M2 及后续芯片。
+                        </p>
+                        <a href="https://www.processon.com/download" target="_blank" class="download-link">下载 ProcessOn Mac 客户端</a>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
+                            文件大小: ~160MB | 下载后打开 DMG 拖入应用程序
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Linux Download -->
+                <div id="linux" class="download-content">
+                    <div class="download-card">
+                        <div class="os-icons">
+                            <div class="os-item">
+                                <div class="os-icon">🐧</div>
+                                <span class="os-name">Linux</span>
+                                <span class="os-desc">Ubuntu / Debian / CentOS</span>
+                            </div>
+                        </div>
+                        <p style="margin-bottom: 1.5rem; color: var(--text-light);">
+                            提供 AppImage 和 .deb 安装包，支持主流桌面环境。
+                        </p>
+                        <a href="https://www.processon.com/download" target="_blank" class="download-link">下载 ProcessOn Linux 客户端</a>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
+                            文件大小: ~120MB | 下载后添加执行权限并运行
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation Guide -->
+        <section id="guide" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>安装与使用指南</h2>
+                    <p>简单的三步，快速开启您的绘图之旅</p>
+                </div>
+                <div class="guide-steps">
+                    <div class="step-item" data-step="1">
+                        <h4>1. 下载安装包</h4>
+                        <p>访问 ProcessOn 官方下载页面，根据您的操作系统选择对应的版本并点击下载按钮。</p>
+                    </div>
+                    <div class="step-item" data-step="2">
+                        <h4>2. 运行安装程序</h4>
+                        <p>Windows 用户双击安装包，Mac 用户将应用拖入“应用程序”文件夹，Linux 用户添加执行权限。</p>
+                    </div>
+                    <div class="step-item" data-step="3">
+                        <h4>3. 注册并登录</h4>
+                        <p>首次启动客户端，请使用手机号或邮箱注册账号，登录后即可同步云端文件并开始创作。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            下载的客户端是免费的吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            ProcessOn 客户端完全免费，注册账号即可使用。基础功能如创建流程图、导出图片等均无需付费。部分高级字体或特定格式导出可能需要专业版会员。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            下载安装后无法启动怎么办？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            请检查您的操作系统版本是否满足要求。如果是 Windows，尝试以管理员身份运行安装程序；如果是 Mac，检查是否下载了对应芯片（Intel 或 Apple Silicon）的版本。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            客户端支持导入 Visio 文件吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            是的，ProcessOn 支持导入 Visio 的 .vsd 和 .vdx 格式文件，并支持导出为 Visio 兼容格式，实现跨平台协作。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            电脑断网可以使用吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            安装客户端后，您可以离线打开本地文件进行编辑。但为了保存最新进度和同步云端资料，建议在网络环境良好时登录账号。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于 ProcessOn</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        ProcessOn 是一款在线绘图工具，致力于为用户提供简单、高效的流程图和思维导图制作体验。支持多人实时协作，是团队办公的理想选择。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">在线流程图</a></li>
+                        <li><a href="#">思维导图</a></li>
+                        <li><a href="#">UML 工具</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>下载支持</h4>
+                    <ul>
+                        <li><a href="#">Windows 下载</a></li>
+                        <li><a href="#">Mac 下载</a></li>
+                        <li><a href="#">Linux 下载</a></li>
+                        <li><a href="#">版本更新日志</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">用户反馈</a></li>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023-2024 ProcessOn 下载指南. All rights reserved. 本站为用户下载指引页面，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Switching Logic
+        function switchTab(os) {
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Hide all content
+            const contents = document.querySelectorAll('.download-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Activate selected button and content
+            event.target.classList.add('active');
+            document.getElementById(os).classList.add('active');
+        }
+
+        // FAQ Accordion Logic
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all other items
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(i => i.classList.remove('active'));
+
+            // Toggle current item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
