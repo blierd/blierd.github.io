@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="大野茜里 - 日本知名插画家、原画师及同人创作者。本站收录其代表作品、角色设计风格、同人志发布信息及粉丝交流指南。">
+    <meta name="keywords" content="大野茜里, 大野茜里 同人, 大野茜里 插画, 大野茜里 原画, 大野茜里 作品">
+    <title>大野茜里 - 官方作品集与同人创作展示平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Content Sections */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-box {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .info-item {
+            margin-bottom: 1rem;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .info-value {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        /* Tags */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: #f0f2f5;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content p {
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">大野茜里</div>
+            <nav>
+                <ul>
+                    <li><a href="#works" class="active">作品集</a></li>
+                    <li><a href="#about">关于</a></li>
+                    <li><a href="#gallery">画廊</a></li>
+                    <li><a href="#contact">联系</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>探索色彩与情感的视觉世界</h1>
+                <p>大野茜里是一位专注于角色设计与插画创作的艺术家。本站汇集了其同人创作、商业插图及个人艺术风格展示。</p>
+                <a href="#works" class="btn">浏览作品</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Featured Works -->
+                <section id="works">
+                    <h2 class="section-title">精选作品</h2>
+                    <div class="gallery-grid">
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/art1/400/300" alt="角色设计作品" class="card-image">
+                            <div class="card-body">
+                                <h3 class="card-title">夏夜幻想曲</h3>
+                                <p class="card-desc">为同人展绘制的角色立绘，使用了厚涂风格表现光影质感。</p>
+                                <div class="card-meta">
+                                    <span>插画</span>
+                                    <span>2023.10</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/art2/400/300" alt="风景概念图" class="card-image">
+                            <div class="card-body">
+                                <h3 class="card-title">赛博朋克都市</h3>
+                                <p class="card-desc">概念设计草图，展现了未来城市的繁华与霓虹光影。</p>
+                                <div class="card-meta">
+                                    <span>概念设计</span>
+                                    <span>2023.08</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/art3/400/300" alt="角色原画" class="card-image">
+                            <div class="card-body">
+                                <h3 class="card-title">精灵的守望</h3>
+                                <p class="card-desc">原创角色原画，注重服饰细节与生物结构的准确性。</p>
+                                <div class="card-meta">
+                                    <span>原画</span>
+                                    <span>2023.05</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/art4/400/300" alt="水彩练习" class="card-image">
+                            <div class="card-body">
+                                <h3 class="card-title">静谧湖畔</h3>
+                                <p class="card-desc">尝试水彩风格绘制的风景速写，追求清新自然的色调。</p>
+                                <div class="card-meta">
+                                    <span>水彩</span>
+                                    <span>2023.03</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about">
+                    <h2 class="section-title">关于大野茜里</h2>
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-start;">
+                        <img src="https://picsum.photos/seed/artist/150/150" alt="艺术家头像" style="border-radius: 8px; flex-shrink: 0;">
+                        <div>
+                            <p>大野茜里（Ono Akari）是一位活跃于网络社区的独立插画师与同人创作者。擅长使用Photoshop进行数字绘画，尤其热衷于二次元角色的服饰设计与色彩搭配。</p>
+                            <br>
+                            <p>其作品风格兼具细腻的笔触与大胆的构图，在各大同人展与社交媒体上拥有稳定的粉丝群体。致力于通过视觉艺术传达细腻的情感与故事性。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Gallery Grid -->
+                <section id="gallery">
+                    <h2 class="section-title">画廊分类</h2>
+                    <div class="gallery-grid">
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/g1/300/200" alt="动漫同人" class="card-image">
+                            <div class="card-body">
+                                <h3 class="card-title">动漫同人</h3>
+                                <p class="card-desc">热门动漫角色二创作品。</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/g2/300/200" alt="原创角色" class="card-image">
+                            <div class="card-body">
+                                <h3 class="card-title">原创角色</h3>
+                                <p class="card-desc">完全原创的原创角色设计。</p>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/g3/300/200" alt="背景绘制" class="card-image">
+                            <div class="card-body">
+                                <h3 class="card-title">背景绘制</h3>
+                                <p class="card-desc">复杂的场景环境设计。</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside>
+                <!-- Artist Info -->
+                <div class="info-box" id="about">
+                    <h3 class="section-title" style="font-size: 1.2rem; margin-bottom: 1rem;">创作者档案</h3>
+                    <div class="info-item">
+                        <span class="info-label">昵称</span>
+                        <span class="info-value">大野茜里</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">职业</span>
+                        <span class="info-value">自由插画师</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">主要平台</span>
+                        <span class="info-value">Pixiv, Twitter, Lofter</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">擅长风格</span>
+                        <span class="info-value">厚涂, 二次元, 赛博朋克</span>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="info-box">
+                    <h3 class="section-title" style="font-size: 1.2rem; margin-bottom: 1rem;">关注动态</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">获取最新的作品更新与活动信息。</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <a href="#" class="btn" style="text-align: center; font-size: 0.9rem;">前往 Pixiv</a>
+                        <a href="#" class="btn" style="text-align: center; font-size: 0.9rem; background-color: #1da1f2;">关注 Twitter</a>
+                    </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="info-box">
+                    <h3 class="section-title" style="font-size: 1.2rem; margin-bottom: 1rem;">热门标签</h3>
+                    <div class="tag-cloud">
+                        <a href="#" class="tag">#厚涂</a>
+                        <a href="#" class="tag">#二次元</a>
+                        <a href="#" class="tag">#同人本</a>
+                        <a href="#" class="tag">#角色设计</a>
+                        <a href="#" class="tag">#色彩练习</a>
+                        <a href="#" class="tag">#赛博朋克</a>
+                        <a href="#" class="tag">#日系插画</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 大野茜里创作展示平台. 保留所有权利.</p>
+            <p>本站为粉丝自发搭建的展示页面，非官方网站。</p>
+            <p>所有作品版权归原作者所有。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
