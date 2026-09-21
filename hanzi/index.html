@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="蚶子养殖、选购与烹饪指南。提供优质蚶子产地介绍、营养价值分析、常见品种辨别、清洗处理方法及蒜蓉粉丝蒸蚶子等经典菜谱，帮助您更好地了解和享用这一美味海鲜。">
+    <meta name="keywords" content="蚶子, 蚶子怎么吃, 蚶子做法, 蒜蓉粉丝蒸蚶子, 蚶子选购, 海鲜">
+    <title>蚶子-美味海鲜选购与烹饪全指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #006d77;
+            --secondary-color: #83c5be;
+            --accent-color: #edf6f9;
+            --text-dark: #2d3436;
+            --text-gray: #636e72;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f8f9fa;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+            color: var(--primary-color);
+            display: inline-block;
+        }
+
+        /* Intro Grid */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        /* Varieties List */
+        .varieties-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .variety-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .variety-img {
+            width: 100%;
+            height: 180px;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 3rem;
+        }
+
+        .variety-info {
+            padding: 1.5rem;
+        }
+
+        .variety-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .variety-info p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+        }
+
+        /* Cooking Steps */
+        .cooking-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--accent-color);
+        }
+
+        .faq-answer {
+            padding: 0 1.2rem 1.2rem;
+            color: var(--text-gray);
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a {
+            color: #b2bec3;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #444;
+            color: #636e72;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplified for mobile demo */
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="#" class="logo">🦪 蚶子百科</a>
+        <ul class="nav-links">
+            <li><a href="#intro">简介</a></li>
+            <li><a href="#varieties">常见品种</a></li>
+            <li><a href="#cooking">烹饪方法</a></li>
+            <li><a href="#faq">选购指南</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>品味深海鲜味：蚶子全攻略</h1>
+    <p>蚶子是一种肉质鲜嫩、营养丰富的高品质海鲜。本站为您提供从品种识别、产地科普到经典烹饪技巧的全方位指南，助您轻松挑选并制作出美味的家常海鲜。</p>
+    <a href="#cooking" class="cta-button">开始烹饪</a>
+</section>
+
+<main>
+    <!-- Introduction Section -->
+    <section id="intro">
+        <h2 class="section-title">什么是蚶子？</h2>
+        <div class="intro-grid">
+            <article class="card">
+                <h3>🦐 海洋馈赠</h3>
+                <p>蚶子属于软体动物门，双壳纲，蚶科。它们通常栖息在浅海泥沙或沙砾底质中，以滤食浮游生物为生。蚶子外壳表面通常具有放射状的肋纹，这也是其最显著的形态特征。</p>
+            </article>
+            <article class="card">
+                <h3>🥗 营养价值</h3>
+                <p>蚶子肉富含蛋白质、脂肪、碳水化合物以及钙、磷、铁等多种微量元素。其肉质细嫩，味道鲜美，具有较高的营养价值，适合大多数人群食用，尤其适合身体虚弱或需要补充营养的人群。</p>
+            </article>
+            <article class="card">
+                <h3>⚠️ 食用安全</h3>
+                <p>蚶子属于贝类海鲜，容易富集海洋中的毒素（如腹泻性贝毒）。食用前必须彻底煮熟，严禁生食，以确保食品安全，避免感染寄生虫或食物中毒。</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Varieties Section -->
+    <section id="varieties">
+        <h2 class="section-title">常见蚶子品种</h2>
+        <div class="varieties-list">
+            <div class="variety-item">
+                <div class="variety-img">🐚</div>
+                <div class="variety-info">
+                    <h3>泥蚶</h3>
+                    <p>又称血蚶，壳厚，壳面有放射状肋。其肉质呈红色，煮熟后肉色更红，故得名。味道最为鲜美，是制作“血蚶”菜肴的首选。</p>
+                </div>
+            </div>
+            <div class="variety-item">
+                <div class="variety-img">🐚</div>
+                <div class="variety-info">
+                    <h3>毛蚶</h3>
+                    <p>壳表面有放射状肋，肋上常有明显的绒毛状突起。肉质肥厚，口感爽滑，价格相对亲民，是常见的食用品种。</p>
+                </div>
+            </div>
+            <div class="variety-item">
+                <div class="variety-img">🐚</div>
+                <div class="variety-info">
+                    <h3>泥蚶</h3>
+                    <p>壳表面有整齐的放射肋，边缘较直。肉质呈白色或淡黄色，味道清淡，适合清蒸或煮汤，更能体现原汁原味。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cooking Section -->
+    <section id="cooking">
+        <h2 class="section-title">经典蚶子做法</h2>
+        <div class="cooking-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>预处理：清洗与吐沙</h4>
+                    <p>将购买回来的蚶子放入清水中，滴入几滴香油或少许盐，静置浸泡2-4小时，让其吐尽体内的泥沙。清洗时可用刷子轻轻刷洗外壳，去除表面的杂质。</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>蒜蓉粉丝蒸蚶子</h4>
+                    <p>准备适量粉丝泡软铺底，将处理好的蚶子整齐排列在粉丝上。锅中烧油，爆香蒜蓉、辣椒和葱花，加入生抽、蚝油调制成酱汁，均匀淋在蚶子上。大火蒸5-8分钟即可，肉质鲜嫩，蒜香浓郁。</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>原汁清蒸</h4>
+                    <p>为了保留蚶子最原始的鲜甜味，可选择简单的清蒸。将蚶子洗净放入蒸盘，无需过多调料，仅撒少许姜丝和料酒，大火蒸至壳微张。出锅后淋上少许蒸鱼豉油，口感最为清爽。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <h2 class="section-title">选购与食用指南</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">如何挑选新鲜的蚶子？</div>
+                <div class="faq-answer">
+                    <p>挑选蚶子时，首先看外壳是否完整，表面是否有光泽。其次，轻轻触碰张开的蚶子，如果触碰到后能迅速闭合，说明是活蚶子。死掉的蚶子外壳通常松散，触碰后反应迟钝或无法闭合。此外，闻起来没有异味也是新鲜的重要标志。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">蚶子怎么吃才安全？</div>
+                <div class="faq-answer">
+                    <p>蚶子属于贝类，极易携带细菌和病毒。最安全的吃法是彻底煮熟。建议蒸煮时间不少于8分钟，确保肉质完全变白且壳完全张开。严禁生吃或半生不熟地食用，以免引发肠胃疾病。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">哪些人不适合吃蚶子？</div>
+                <div class="faq-answer">
+                    <p>由于蚶子性寒且属于高蛋白食物，海鲜过敏者应避免食用。此外，脾胃虚寒、容易腹泻的人群也不宜多吃，以免加重身体负担。痛风患者在急性发作期应禁食海鲜。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>蚶子百科</h4>
+            <p>致力于分享最优质的海洋美食知识，让更多人了解并享受海鲜带来的健康与美味。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速导航</h4>
+            <ul>
+                <li><a href="#intro">关于蚶子</a></li>
+                <li><a href="#varieties">品种介绍</a></li>
+                <li><a href="#cooking">烹饪教程</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>温馨提示</h4>
+            <ul>
+                <li>请务必煮熟后食用</li>
+                <li>过敏体质者慎食</li>
+                <li>注意饮食卫生</li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2023 蚶子百科指南. All Rights Reserved.
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Accordion Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
